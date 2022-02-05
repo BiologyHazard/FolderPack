@@ -1,0 +1,19 @@
+{
+    "path": "datapack test",
+    "content": {
+        "data": {
+            "minecraft": {
+                "tags": {
+                    "functions": {
+                        "load.json": "{\"values\":[\"\"]}",
+                        "tick.json": "{\"values\":[\"\"]}"
+                    }
+                }
+            },
+            "{Namespace}": {
+                "functions": {}
+            }
+        },
+        "pack.mcmeta": "{\"pack\":{\"pack_format\":8,\"description\":\"\"}}"
+    }
+}
