@@ -1,22 +1,18 @@
-from hashlib import new
 import json
 import os
-from re import sub
 
 
 def _unpack(path='', content=None):
     if content is None:
         content = {}
     for name, content in content.items():
-        if type(content) == str:
+        if isinstance(content, str):
             with open(os.path.join(path, name), 'w', encoding='utf-8') as f:
                 f.write(content)
-        elif type(content) == dict:
-            newpath = os.path.join(path, name)
-            try:
+        elif isinstance(content, dict):
+            newpath: str = os.path.join(path, name)
+            if not os.path.exists(newpath):
                 os.mkdir(newpath)
-            except:
-                pass
             _unpack(newpath, content)
         else:
             raise TypeError
